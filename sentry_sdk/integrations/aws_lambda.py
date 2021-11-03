@@ -299,7 +299,7 @@ def get_lambda_bootstrap():
     elif "__main__" in sys.modules:
         module = sys.modules["__main__"]
         if hasattr(module, "awslambdaricmain") and hasattr(
-            module.awslambdaricmain, "bootstrap"
+            module.awslambdaricmain, "bootstrap"  # type: ignore
         ):
             return module.awslambdaricmain.bootstrap  # type: ignore
         elif hasattr(module, "bootstrap"):
